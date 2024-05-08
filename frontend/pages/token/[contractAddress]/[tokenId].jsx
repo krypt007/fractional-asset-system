@@ -9,12 +9,12 @@ import {
 import { GetStaticPaths, GetStaticProps } from "next";
 import Link from "next/link";
 
-type Props = {
-    nft: NFT;
-    contractMetadata: any;
-};
+// type Props = {
+//     nft: NFT;
+//     contractMetadata: any;
+// };
 
-export default function TokenPage({ nft, contractMetadata }: Props) {
+export default function TokenPage({ nft, contractMetadata }) {
     const { contract: marketplace, isLoading: loadingMarketplace } = 
         useContract(
             MARKETPLACE_ADDRESS, 
@@ -30,7 +30,7 @@ export default function TokenPage({ nft, contractMetadata }: Props) {
         });
 
     //Add these for auction section
-    const [bidValue, setBidValue] = useState<string>();
+    const [bidValue, setBidValue] = useState();
 
     const { data: auctionListing, isLoading: loadingAuction } =
         useValidEnglishAuctions(marketplace, {
@@ -201,8 +201,8 @@ export default function TokenPage({ nft, contractMetadata }: Props) {
     )
 };
 
-export const getStaticProps: GetStaticProps = async (context) => {
-    const tokenId = context.params?.tokenId as string;
+export const getStaticProps = async (context) => {
+    const tokenId = context.params?.tokenId;
   
     const sdk = new ThirdwebSDK("binance-testnet");
   
@@ -225,7 +225,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     };
   };
 
-  export const getStaticPaths: GetStaticPaths = async () => {
+  export const getStaticPaths = async () => {
     const sdk = new ThirdwebSDK("binance-testnet");
   
     const contract = await sdk.getContract(NFT_COLLECTION_ADDRESS);
