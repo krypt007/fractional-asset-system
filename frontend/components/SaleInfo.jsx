@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React from "react";
 import { NFT as NFTType } from "@thirdweb-dev/sdk";
 import { useRouter } from "next/router";
@@ -6,40 +7,39 @@ import { Web3Button, useContract, useCreateAuctionListing, useCreateDirectListin
 import { MARKETPLACE_ADDRESS, NFT_COLLECTION_ADDRESS } from "../const/addresses";
 import { Box, Input, Stack, Tab, TabList, TabPanel, TabPanels, Tabs, Text } from "@chakra-ui/react";
 
-type Props = {
-    nft: NFTType;
-};
+// type Props = {
+//     nft: NFTType;
+// };
 
-type DirectFormData = {
-    nftContractAddress: string;
-    tokenId: string;
-    price: string;
-    startDate: Date;
-    endDate: Date;
-};
+// type DirectFormData = {
+//     nftContractAddress: string;
+//     tokenId: string;
+//     price: string;
+//     startDate: Date;
+//     endDate: Date;
+// };
 
 //Add for Auction
-type AuctionFormData = {
-    nftContractAddress: string;
-    tokenId: string;
-    startDate: Date;
-    endDate: Date;
-    floorPrice: string;
-    buyoutPrice: string;
-};
+// type AuctionFormData = {
+//     nftContractAddress: string;
+//     tokenId: string;
+//     startDate: Date;
+//     endDate: Date;
+//     floorPrice: string;
+//     buyoutPrice: string;
+// };
 
-export default function SaleInfo({ nft }: Props) {
+export default function SaleInfo({ nft }) {
     const router = useRouter();
     const { contract: marketplace } = useContract(MARKETPLACE_ADDRESS, "marketplace-v3");
 
     const { contract: nftCollection } = useContract(NFT_COLLECTION_ADDRESS);
 
     const { mutateAsync: createDirectListing } = useCreateDirectListing(marketplace);
-
     async function checkAndProvideApproval() {
         const hasApproval = await nftCollection?.call(
             "isApprovedForAll",
-            nft.owner,
+            nft.owner, 
             MARKETPLACE_ADDRESS
         );
 
@@ -68,7 +68,7 @@ export default function SaleInfo({ nft }: Props) {
         },
     });
 
-    async function handleSubmissionDirect(data: DirectFormData) {
+    async function handleSubmissionDirect(data) {
         await checkAndProvideApproval();
         const txResult = await createDirectListing({
             assetContractAddress: data.nftContractAddress,
@@ -97,7 +97,7 @@ export default function SaleInfo({ nft }: Props) {
       },
     });
 
-    async function handleSubmissionAuction(data: AuctionFormData) {
+    async function handleSubmissionAuction(data) {
         await checkAndProvideApproval();
         const txResult = await createAuctionListing({
             assetContractAddress: data.nftContractAddress,
