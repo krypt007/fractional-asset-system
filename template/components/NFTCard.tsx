@@ -32,13 +32,13 @@ const NFTCard = ({ nft }: NFTCardProps) => {
                         </div>
                     </>
                 )}
-                <Link
+                {/* <Link
                     href="{NFT_CHECKOUT_LINKS[parseInt(nft.metadata.id)]}"
                 >
                     <button
                         disabled={!address}
                     >Buy Now</button>
-                </Link>
+                </Link> */}
             </div>
         </div>
     );
