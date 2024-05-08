@@ -58,7 +58,7 @@ export default function SaleInfo({ nft }) {
         return true;
     }
 
-    const { register: registerDirect, handleSubmit: handleSubmitDirect } = useForm<DirectFormData>({
+    const { register, handleSubmit } = useForm({
         defaultValues: {
             nftContractAddress: NFT_COLLECTION_ADDRESS,
             tokenId: nft.metadata.id,
@@ -86,7 +86,7 @@ export default function SaleInfo({ nft }) {
     useCreateAuctionListing(marketplace);
 
     const { register: registerAuction, handleSubmit: handleSubmitAuction } =
-    useForm<AuctionFormData>({
+    useForm({
       defaultValues: {
         nftContractAddress: NFT_COLLECTION_ADDRESS,
         tokenId: nft.metadata.id,
