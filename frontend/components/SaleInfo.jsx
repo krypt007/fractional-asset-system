@@ -58,7 +58,7 @@ export default function SaleInfo({ nft }) {
         return true;
     }
 
-    const { register, handleSubmit } = useForm({
+    const { register: registerDirect, handleSubmit: handleSubmitDirect } = useForm({
         defaultValues: {
             nftContractAddress: NFT_COLLECTION_ADDRESS,
             tokenId: nft.metadata.id,
