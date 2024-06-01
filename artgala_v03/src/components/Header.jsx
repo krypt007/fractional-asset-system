@@ -12,7 +12,7 @@ const Header = () => {
           src={timelessLogo}
           alt="Timeless Logo"
         /> */}
-        <div className='text-white text-xl font-semibold animate-pulse border border-red-900/50  rounded-sm max-w-20 justify-center'> Art:Gala</div>
+        <div className='text-white text-xl font-semibold animate-pulse border border-red-900/20  rounded-sm max-w-24 justify-center px-2'> Art:Gala</div>
       </div>
 
       <ul
@@ -20,10 +20,10 @@ const Header = () => {
         hidden list-none flex-row justify-between 
         items-center flex-initial"
       >
-        <li className="mx-4 cursor-pointer">Market</li>
-        <li className="mx-4 cursor-pointer">Artist</li>
-        <li className="mx-4 cursor-pointer">Features</li>
-        <li className="mx-4 cursor-pointer">Community</li>
+        <li className="mx-4 cursor-pointer hover:animate-ping hover:bg-red-900/50 rounded-md px-2 py-1">Buy</li>
+        <li className="mx-4 cursor-pointer hover:animate-ping hover:bg-red-900/50 rounded-md px-2 py-1">Sell</li>
+        <li className="mx-4 cursor-pointer hover:animate-pulse hover:bg-red-900/50 rounded-md px-2 py-1">About</li>
+        <li className="mx-4 cursor-pointer hover:animate-pulse hover:bg-red-900/50 rounded-md px-2 py-1">Contact Us</li>
       </ul>
 
       {connectedAccount ? (

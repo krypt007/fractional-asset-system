@@ -9,17 +9,17 @@ const Footer = () => (
       </div>
 
       <div className="flex flex-1 justify-evenly items-center flex-wrap sm:mt-0 mt-5 w-full">
-        <p className="text-white text-base text-center mx-2 cursor-pointer">
-          Market
+        <p className="text-white text-base text-center mx-2 cursor-pointer hover:animate-ping hover:bg-red-900/20 rounded-md px-2 py-1">
+          Buy
         </p>
-        <p className="text-white text-base text-center mx-2 cursor-pointer">
-          Artist
+        <p className="text-white text-base text-center mx-2 cursor-pointer hover:animate-ping hover:bg-red-900/20 rounded-md px-2 py-1">
+          Sell
         </p>
-        <p className="text-white text-base text-center mx-2 cursor-pointer">
-          Features
+        <p className="text-white text-base text-center mx-2 cursor-pointer hover:animate-pulse hover:bg-red-900/20 rounded-md px-2 py-1">
+          About
         </p>
-        <p className="text-white text-base text-center mx-2 cursor-pointer">
-          Community
+        <p className="text-white text-base text-center mx-2 cursor-pointer hover:animate-pulse hover:bg-red-900/20 rounded-md px-2 py-1">
+          Contact Us
         </p>
       </div>
 
