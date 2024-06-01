@@ -1,9 +1,12 @@
 import timelessLogo from '../assets/timeless.png'
 import { connectWallet } from '../Blockchain.Services'
-import { useGlobalState, truncate } from '../store'
+import { useGlobalState, truncate, setGlobalState } from '../store'
 
 const Header = () => {
   const [connectedAccount] = useGlobalState('connectedAccount')
+  const onShowNFT = () => {
+    setGlobalState('showModal', 'scale-100')
+  }
   return (
     <nav className="w-4/5 flex md:justify-center justify-between items-center py-4 mx-auto">
       <div className="md:flex-[0.5] flex-initial justify-center items-center">
@@ -20,7 +23,12 @@ const Header = () => {
         hidden list-none flex-row justify-between 
         items-center flex-initial"
       >
-        <li className="mx-4 cursor-pointer hover:animate-ping hover:bg-red-900/50 rounded-md px-2 py-1">Buy</li>
+        <li className="mx-4 cursor-pointer hover:animate-ping hover:bg-red-900/50 rounded-md px-2 py-1"
+        onClick={onShowNFT}
+        >
+          Buy
+          
+        </li>
         <li className="mx-4 cursor-pointer hover:animate-ping hover:bg-red-900/50 rounded-md px-2 py-1">Sell</li>
         <li className="mx-4 cursor-pointer hover:animate-pulse hover:bg-red-900/50 rounded-md px-2 py-1">About</li>
         <li className="mx-4 cursor-pointer hover:animate-pulse hover:bg-red-900/50 rounded-md px-2 py-1">Contact Us</li>

@@ -39,7 +39,7 @@ const ShowNFT = () => {
       <div className="bg-[#151c25] shadow-xl shadow-[#e32970] rounded-xl w-11/12 md:w-2/5 h-7/12 p-6">
         <div className="flex flex-col">
           <div className="flex flex-row justify-between items-center">
-            <p className="font-semibold text-gray-400">Buy NFT</p>
+            <p className="font-semibold text-gray-400">Buy Artwork</p>
             <button
               type="button"
               onClick={() => setGlobalState('showModal', 'scale-0')}
@@ -80,7 +80,7 @@ const ShowNFT = () => {
 
               <div className="flex flex-col">
                 <small className="text-xs">Current Price</small>
-                <p className="text-sm font-semibold">{nft?.cost} ETH</p>
+                <p className="text-sm font-semibold">{nft?.cost} USDT</p>
               </div>
             </div>
           </div>

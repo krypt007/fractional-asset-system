@@ -91,7 +91,7 @@ const CreateNFT = () => {
       <div className="bg-[#151c25] shadow-xl shadow-[#e32970] rounded-xl w-11/12 md:w-2/5 h-7/12 p-6">
         <form className="flex flex-col">
           <div className="flex flex-row justify-between items-center">
-            <p className="font-semibold text-gray-400">Add NFT</p>
+            <p className="font-semibold text-gray-400">Add Artwork</p>
             <button
               type="button"
               onClick={closeModal}
@@ -156,7 +156,7 @@ const CreateNFT = () => {
               step={0.01}
               min={0.01}
               name="price"
-              placeholder="Price (Eth)"
+              placeholder="Price (USDT)"
               onChange={(e) => setPrice(e.target.value)}
               value={price}
               required
