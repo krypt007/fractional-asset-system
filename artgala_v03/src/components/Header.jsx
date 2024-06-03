@@ -23,7 +23,7 @@ const Header = () => {
         hidden list-none flex-row justify-between 
         items-center flex-initial"
       >
-        <li className="mx-4 cursor-pointer hover:animate-ping hover:bg-red-900/50 rounded-md px-2 py-1"
+        <li className="mx-4 cursor-pointer hover:animate-ping hover:bg-green-500/50 rounded-md px-2 py-1"
         onClick={onShowNFT}
         >
           Buy
